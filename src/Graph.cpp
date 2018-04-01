@@ -31,6 +31,34 @@ void Graph::shortestPath(int src, int heap_type)
     vector<int> dist(V, INF);
 
 // Add Prim code here
+/* Dijkstra Code
+(*heap).push(make_pair(0, src));
+
+    dist[src] = 0;
+
+    while ((*heap).top() != make_pair(-1, -1))
+    {
+        int u = (*heap).top().second;
+        (*heap).pop();
+
+        list< pair<int, int> >::iterator i;
+        for (i = adj[u].begin(); i != adj[u].end(); ++i)
+        {
+            int v = (*i).first;
+            int weight = (*i).second;
+
+            if (dist[v] > dist[u] + weight)
+            {
+                dist[v] = dist[u] + weight;
+                (*heap).push(make_pair(dist[v], v));
+            }
+        }
+    }
+
+    printf("Vertex Distance from Source\n");
+    for (int i = 0; i < V; ++i)
+        printf("%d \t\t %d\n", i, dist[i]);
+*/
 
     printf("Number of Operations performed : %d \n", (*heap).getOperations());
     return;
